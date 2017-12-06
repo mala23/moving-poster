@@ -10,10 +10,9 @@ class Eye {
   float _actorY;
   float _reactorX;
   float _reactorY;
-  float _distX;
-  float _distY;
-  float eyeW = ((width / 100) * 25.25);
-  float eyeH = ((height / 100) * 17.84);
+  float eyeW = (width * 2.525);
+  float eyeH = (height * 1.784);
+  float _easing = 0.05;
 
   Eye(float eyeX, float eyeY) {
     _posX = eyeX;
@@ -40,27 +39,14 @@ class Eye {
   }
 
   void move() {
-    _distX = abs(_actorX - _reactorX);
-    _distY = abs(_actorY - _reactorY);
-    if (_distX > (_posX + 10)) {
-      _reactorX = _reactorX + 10;
-    } else {
-      _reactorX = _distX;
+    if (abs(_actorX - _reactorX) > 0.1) {
+      _reactorX = _reactorX + (_actorX - _reactorX) * _easing;
     }
-    if (_distY > (_posY + 10)) {
-      _reactorY = _reactorY +  10;
-    } else {
-      _reactorY = _distY;
+    if (abs(_actorY - _reactorY) > 0.1) {
+      _reactorY = _reactorY + (_actorY - _reactorY) * _easing;
     }
-    if (_distX < (_posX - 10)) {
-      _reactorX = _reactorX - 10;
-    } else {
-      _reactorX = _distX;
-    }
-    if (_distY < (_posY - 10)) {
-      _reactorY = _reactorY - 10;
-    } else {
-      _reactorY = _distY;
-    }
+
+    _reactorX = constrain(_reactorX - _posX, -25, 25) + _posX;
+    _reactorY = constrain(_reactorY - _posY, -20, 20) + _posY;
   }
 }
