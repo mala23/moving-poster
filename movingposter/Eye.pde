@@ -10,8 +10,8 @@ class Eye {
   float _actorY;
   float _reactorX;
   float _reactorY;
-  float eyeW = (width * 2.525);
-  float eyeH = (height * 1.784);
+  float _eyeW = (width * 0.2525);
+  float _eyeH = (height * 0.1784);
   float _easing = 0.05;
 
   Eye(float eyeX, float eyeY) {
@@ -27,10 +27,10 @@ class Eye {
   };
 
   void draw() {
-    shape(_eyeBackground, _posX, _posY);
-    shape(_eyeLashBottom, _posX, _posY);
-    shape(_eyeLashTop, _posX, _posY);
-    shape(_eyeIris, _reactorX, _reactorY);
+    shape(_eyeBackground, _posX, _posY, _eyeW, _eyeH);
+    shape(_eyeLashBottom, _posX, _posY, _eyeW, _eyeH);
+    shape(_eyeLashTop, _posX, _posY, _eyeW, _eyeH);
+    shape(_eyeIris, _reactorX, _reactorY, _eyeW, _eyeH);
   }
 
   void setActorPos(float actorX, float actorY) {
