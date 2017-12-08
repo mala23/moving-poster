@@ -1,4 +1,5 @@
 int posterBackground = 255;
+int textId = 1;
 float actorX;              
 float actorY;              
 float eyeW;                
@@ -74,46 +75,11 @@ void draw() {
   eye8.move();            
   eye9.move();            
                           
-  text.draw();            
+  text.draw(textId);            
   PVector heapPoint = faceLocation();
+  if (faces.length > 0) {
+    textId = 2;
+  } else {
+    textId = 1;
+  }
 };                        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -4,6 +4,7 @@ class Text {
   float _posX;
   float _posY;
   float _s;
+  int _textId;
   float _textW;
   float _textH;
   float _textRatio;
@@ -18,7 +19,11 @@ class Text {
     _textH = _textW / _textRatio;
   };
 
-  void draw() {
-    shape(_textA, _posX, _posY,_textW, _textH);
+  void draw(int textId) {
+    if (textId == 1) {
+      shape(_textA, _posX, _posY, _textW, _textH);
+    } else {
+      shape(_textB, _posX, _posY, _textW, _textH);
+    }
   }
 }
