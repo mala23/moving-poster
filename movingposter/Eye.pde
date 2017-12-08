@@ -10,13 +10,15 @@ class Eye {
   float _actorY;
   float _reactorX;
   float _reactorY;
-  float _eyeW = (width * 0.2525);
-  float _eyeH = (height * 0.1784);
+  float _eyeW;
+  float _eyeH;
   float _easing = 0.05;
 
-  Eye(float eyeX, float eyeY) {
+  Eye(float eyeX, float eyeY, float eyeW, float eyeH) {
     _posX = eyeX;
     _posY = eyeY;
+    _eyeW = eyeW;
+    _eyeH = eyeH;
     _reactorX = _posX;
     _reactorY = _posY;
     _eye = loadShape("data/svg/eye.svg");

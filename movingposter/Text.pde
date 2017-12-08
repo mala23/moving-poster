@@ -3,15 +3,22 @@ class Text {
   PShape _textB;
   float _posX;
   float _posY;
+  float _s;
+  float _textW;
+  float _textH;
+  float _textRatio;
 
   Text(float textX, float textY) {
     _posX = textX;
     _posY = textY;
     _textA = loadShape("data/svg/text-a.svg");
     _textB = loadShape("data/svg/text-b.svg");
+    _textRatio = _textA.width / _textA.height;
+    _textW = width * 0.9;
+    _textH = _textW / _textRatio;
   };
 
   void draw() {
-    shape(_textA, _posX, _posY);
+    shape(_textA, _posX, _posY,_textW, _textH);
   }
 }
