@@ -3,7 +3,6 @@ class Text {
   PShape _textB;
   float _posX;
   float _posY;
-  float _s;
   int _textId;
   float _textW;
   float _textH;
