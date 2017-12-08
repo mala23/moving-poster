@@ -64,16 +64,28 @@ void draw() {
   eye7.draw();            
   eye8.draw();            
   eye9.draw();            
-                          
-  eye1.move();            
-  eye2.move();            
-  eye3.move();            
-  eye4.move();            
-  eye5.move();            
-  eye6.move();            
-  eye7.move();            
-  eye8.move();            
-  eye9.move();            
+
+  if (faceDetected = true) {
+    eye1.move();            
+    eye2.move();            
+    eye3.move();            
+    eye4.move();            
+    eye5.move();            
+    eye6.move();            
+    eye7.move();            
+    eye8.move();            
+    eye9.move();            
+  } else {
+    eye1.idle();            
+    eye2.idle();            
+    eye3.idle();            
+    eye4.idle();            
+    eye5.idle();            
+    eye6.idle();            
+    eye7.idle();            
+    eye8.idle();            
+    eye9.idle();            
+  }
                           
   text.draw(textId);            
   PVector heapPoint = faceLocation();
