@@ -36,8 +36,8 @@ class Eye {
   }
 
   void setActorPos(float actorX, float actorY) {
-    _actorX = actorX;
-    _actorY = actorY;
+    _actorX = actorY;
+    _actorY = actorX;
   }
 
   void move() {

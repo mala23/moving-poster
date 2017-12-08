@@ -19,7 +19,7 @@ Eye eye9;
 Text text;                 
                            
 void setup() {             
-  fullScreen();            
+  fullScreen(2);          
   setupScreen();           
   shapeMode(CENTER);       
   setupOpenCV();           
@@ -28,95 +28,92 @@ void setup() {
   margin = width * 0.05;   
   gutter = width * 0.075;  
                            
-  eye1 = new Eye(eyeW * 0. 5 + margin, eyeH * 0.5 + margin, eyeW, eyeH);
-  eye2 = new Eye(eyeW * 1. 5 + margin + gutter, eyeH * 0.5 + margin, eyeW, eyeH);
-  eye3 = new Eye(eyeW * 2. 5 + margin + gutter * 2, eyeH * 0.5 + margin, eyeW, eyeH);
-  eye4 = new Eye(eyeW * 0. 5 + margin, eyeH * 1.5 + margin + gutter, eyeW, eyeH);
-  eye5 = new Eye(eyeW * 1. 5 + margin + gutter, eyeH * 1.5 + margin + gutter, eyeW, eyeH);
-  eye6 = new Eye(eyeW * 2. 5 + margin + gutter * 2, eyeH * 1.5 + margin + gutter, eyeW, eyeH);
-  eye7 = new Eye(eyeW * 0. 5 + margin, eyeH * 2.5 + margin + gutter * 2, eyeW, eyeH);
-  eye8 = new Eye(eyeW * 1. 5 + margin + gutter, eyeH * 2.5 + margin + gutter * 2, eyeW, eyeH);
-  eye9 = new Eye(eyeW * 2. 5 + margin + gutter * 2, eyeH * 2.5 + margin + gutter * 2, eyeW, eyeH);
-                           
-  text = new Text(width /  2, height * 0.9);
-};                         
-                           
-void draw() {              
-  background(posterBackgro und);
-                           
-  eye1.setActorPos(heapPoi nt.x, heapPoint.y);
-  eye2.setActorPos(heapPoi nt.x, heapPoint.y);
-  eye3.setActorPos(heapPoi nt.x, heapPoint.y);
-  eye4.setActorPos(heapPoi nt.x, heapPoint.y);
-  eye5.setActorPos(heapPoi nt.x, heapPoint.y);
-  eye6.setActorPos(heapPoi nt.x, heapPoint.y);
-  eye7.setActorPos(heapPoi nt.x, heapPoint.y);
-  eye8.setActorPos(heapPoi nt.x, heapPoint.y);
-  eye9.setActorPos(heapPoi nt.x, heapPoint.y);
-                           
-  eye1.draw();             
-  eye2.draw();             
-  eye3.draw();             
-  eye4.draw();             
-  eye5.draw();             
-  eye6.draw();             
-  eye7.draw();             
-  eye8.draw();             
-  eye9.draw();             
-                           
-  eye1.move();             
-  eye2.move();             
-  eye3.move();             
-  eye4.move();             
-  eye5.move();             
-  eye6.move();             
-  eye7.move();             
-  eye8.move();             
-  eye9.move();             
-                           
-  text.draw();             
-  PVector heapPoint = face Location();
-};                         
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
-                           
+  eye1 = new Eye(eyeW * 0.5 + margin, eyeH * 0.5 + margin, eyeW, eyeH);
+  eye2 = new Eye(eyeW * 1.5 + margin + gutter, eyeH * 0.5 + margin, eyeW, eyeH);
+  eye3 = new Eye(eyeW * 2.5 + margin + gutter * 2, eyeH * 0.5 + margin, eyeW, eyeH);
+  eye4 = new Eye(eyeW * 0.5 + margin, eyeH * 1.5 + margin + gutter, eyeW, eyeH);
+  eye5 = new Eye(eyeW * 1.5 + margin + gutter, eyeH * 1.5 + margin + gutter, eyeW, eyeH);
+  eye6 = new Eye(eyeW * 2.5 + margin + gutter * 2, eyeH * 1.5 + margin + gutter, eyeW, eyeH);
+  eye7 = new Eye(eyeW * 0.5 + margin, eyeH * 2.5 + margin + gutter * 2, eyeW, eyeH);
+  eye8 = new Eye(eyeW * 1.5 + margin + gutter, eyeH * 2.5 + margin + gutter * 2, eyeW, eyeH);
+  eye9 = new Eye(eyeW * 2.5 + margin + gutter * 2, eyeH * 2.5 + margin + gutter * 2, eyeW, eyeH);
+                          
+  text = new Text(width / 2, height * 0.9);
+};                        
+                          
+void draw() {             
+  background(posterBackground);
+                          
+  eye1.setActorPos(heapPoint.x, heapPoint.y);
+  eye2.setActorPos(heapPoint.x, heapPoint.y);
+  eye3.setActorPos(heapPoint.x, heapPoint.y);
+  eye4.setActorPos(heapPoint.x, heapPoint.y);
+  eye5.setActorPos(heapPoint.x, heapPoint.y);
+  eye6.setActorPos(heapPoint.x, heapPoint.y);
+  eye7.setActorPos(heapPoint.x, heapPoint.y);
+  eye8.setActorPos(heapPoint.x, heapPoint.y);
+  eye9.setActorPos(heapPoint.x, heapPoint.y);
+                          
+  eye1.draw();            
+  eye2.draw();            
+  eye3.draw();            
+  eye4.draw();            
+  eye5.draw();            
+  eye6.draw();            
+  eye7.draw();            
+  eye8.draw();            
+  eye9.draw();            
+                          
+  eye1.move();            
+  eye2.move();            
+  eye3.move();            
+  eye4.move();            
+  eye5.move();            
+  eye6.move();            
+  eye7.move();            
+  eye8.move();            
+  eye9.move();            
+                          
+  text.draw();            
+  PVector heapPoint = faceLocation();
+};                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
