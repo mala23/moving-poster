@@ -65,7 +65,17 @@ void draw() {
   eye8.draw();            
   eye9.draw();            
 
-  if (faceDetected = true) {
+  eye1.idle();            
+  eye2.idle();            
+  eye3.idle();            
+  eye4.idle();            
+  eye5.idle();            
+  eye6.idle();            
+  eye7.idle();            
+  eye8.idle();            
+  eye9.idle();            
+
+  if (faces.length > 0) {
     eye1.move();            
     eye2.move();            
     eye3.move();            
@@ -75,7 +85,7 @@ void draw() {
     eye7.move();            
     eye8.move();            
     eye9.move();            
-  } else {
+  } else if (faces.length == 0) {
     eye1.idle();            
     eye2.idle();            
     eye3.idle();            
@@ -91,7 +101,7 @@ void draw() {
   PVector heapPoint = faceLocation();
   if (faces.length > 0) {
     textId = 2;
-  } else {
+  } else if (faces.length == 0) {
     textId = 1;
   }
 };                        

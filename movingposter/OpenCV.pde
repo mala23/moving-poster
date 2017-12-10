@@ -6,7 +6,6 @@ import java.awt.Rectangle;
 int camWidth = 320;
 int camHeight = 180;
 //
-boolean faceDetected = false;
 boolean displayWindow = false;
 Rectangle[] faces = new Rectangle[0];
 Rectangle ActiveFace;
@@ -49,13 +48,11 @@ PVector faceLocation() {
   faces = opencv.detect();
 
   if (faces.length == 0) {
-    faceDetected = false;
     ActiveFace.width = 1;
     ActiveFace.height = 1;
     ActiveFace.x = camWidth/2;
     ActiveFace.y = camHeight/2;
   } else if (faces.length>1) {
-    faceDetected = true;
     int index = 0;
     float record = camWidth*2;
     for (int i = 0; i < faces.length; i++) {

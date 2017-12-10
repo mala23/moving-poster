@@ -13,8 +13,8 @@ class Eye {
   float _eyeW;
   float _eyeH;
   float _easing = 0.05;
-  int _idleX = int(random(0, width));
-  int _idleY = int(random(0, height));
+  int _idleX = int(noise(0, width));
+  int _idleY = int(noise(0, height));
 
   Eye(float eyeX, float eyeY, float eyeW, float eyeH) {
     _posX = eyeX;
@@ -35,6 +35,9 @@ class Eye {
     shape(_eyeLashBottom, _posX, _posY, _eyeW, _eyeH);
     shape(_eyeLashTop, _posX, _posY, _eyeW, _eyeH);
     shape(_eyeIris, _reactorX, _reactorY, _eyeW, _eyeH);
+
+    _idleX = int(noise(0, width));
+    _idleY = int(noise(0, height));
   }
 
   void setActorPos(float actorX, float actorY) {
@@ -55,7 +58,8 @@ class Eye {
   }
 
   void idle() {
-    println(_idleX, _idleY);
+  _idleX = int(noise(0, width));
+  _idleY = int(noise(0, height));
     if (abs(_idleX - _reactorX) > 0.1) {
       _reactorX = _reactorX + (_idleX - _reactorX) * _easing;
     }
