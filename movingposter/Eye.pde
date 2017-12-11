@@ -63,24 +63,21 @@ class Eye {
   }
 
   void idle() {
-    if (_idleFrame == 0 || _idleFrame > _lastFrame) {
-
+    if (_idleFrame > _lastFrame) {
       _initIdle();
-
-      if (abs(_idleX - _reactorX) > 0.1) {
-        _reactorX = _reactorX + (_idleX - _reactorX) * _easing / _lastFrame;
-      }
-      if (abs(_idleY - _reactorY) > 0.1) {
-        _reactorY = _reactorY + (_idleY - _reactorY) * _easing / _lastFrame;
-      }
-
-      int _lastFrame = int(random(20, 35));
-      _idleFrame += 1;
     }
-    _idleFrame += 1;
-    println(_idleFrame);
+
+    if (abs(_idleX - _reactorX) > 0.1) {
+      _reactorX = _reactorX + (_idleX - _reactorX) * _easing;
+    }
+    if (abs(_idleY - _reactorY) > 0.1) {
+      _reactorY = _reactorY + (_idleY - _reactorY) * _easing;
+    }
 
     _reactorX = constrain(_reactorX - _posX, -25, 25) + _posX;
     _reactorY = constrain(_reactorY - _posY, -20, 20) + _posY;
+
+    int _lastFrame = int(random(20, 35));
+    _idleFrame += 1;
   }
 }
