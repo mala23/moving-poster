@@ -13,6 +13,7 @@ class Eye {
   float _eyeW;
   float _eyeH;
   float _easing = 0.05;
+  float _idleEasing = 0.02;
   int _idleFrame = 0;
   int _idleX = int(random(0, width));
   int _idleY = int(random(0, height));
@@ -68,10 +69,10 @@ class Eye {
     }
 
     if (abs(_idleX - _reactorX) > 0.1) {
-      _reactorX = _reactorX + (_idleX - _reactorX) * _easing;
+      _reactorX = _reactorX + (_idleX - _reactorX) * _idleEasing;
     }
     if (abs(_idleY - _reactorY) > 0.1) {
-      _reactorY = _reactorY + (_idleY - _reactorY) * _easing;
+      _reactorY = _reactorY + (_idleY - _reactorY) * _idleEasing;
     }
 
     _reactorX = constrain(_reactorX - _posX, -25, 25) + _posX;
