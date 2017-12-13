@@ -82,8 +82,10 @@ PVector faceLocation() {
   }
   // calculate average
   average.x = total.x /  headPosition.length;
+  average.x =  -average.x + width; 
   average.y = total.y /  headPosition.length;
   average.z = total.z /  headPosition.length;
+  
   return average;
 }
 
