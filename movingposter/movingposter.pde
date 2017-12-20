@@ -1,3 +1,5 @@
+import processing.pdf.*;
+
 int posterBackground = 255;
 int textId = 1;
 float actorX;              
@@ -43,6 +45,7 @@ void setup() {
 };                        
 
 void draw() {             
+  beginRecord(PDF, "export/frame-####.pdf");
   background(posterBackground);
   PVector heapPoint = faceLocation();                    
   eye1.setActorPos(heapPoint.x, heapPoint.y);
@@ -93,5 +96,10 @@ void draw() {
     textId = 2;
   } else if (faces.length == 0) {
     textId = 1;
+  }
+
+  endRecord(); 
+    if (frameCount == 200) {
+    exit();
   }
 };                        
